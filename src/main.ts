@@ -4,6 +4,7 @@ import { convert, convertPlain } from "./core/convert.ts";
 import { type FenceMode } from "./core/fence.ts";
 import { PREVIEW_CSS, type UiTheme } from "./core/styles.ts";
 import { buildDocument, downloadFile } from "./core/export.ts";
+import { initAnalytics, track } from "./core/analytics.ts";
 import { SAMPLE } from "./sample.ts";
 
 // Inject the shared fence/prose CSS so the preview matches the export exactly.
@@ -185,6 +186,7 @@ copyBtn.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(html);
     flash(copyBtn, "✓ copied");
+    track("copy_html", { mode: state.mode });
   } catch {
     flash(copyBtn, "copy failed");
   }
@@ -198,6 +200,7 @@ downloadBtn.addEventListener("click", () => {
   });
   downloadFile(`${state.filename}.html`, html);
   flash(downloadBtn, "✓ saved");
+  track("download_html", { mode: state.mode });
 });
 
 // upload + drag/drop
@@ -264,3 +267,4 @@ if (saved && typeof saved.content === "string") {
 }
 syncUi();
 void render();
+void initAnalytics();

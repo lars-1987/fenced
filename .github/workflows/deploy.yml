@@ -26,6 +26,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Public PostHog client key. Set as a repo secret; analytics is a
+          # no-op when unset. Host defaults to us.i.posthog.com in code.
+          VITE_POSTHOG_KEY: ${{ secrets.VITE_POSTHOG_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

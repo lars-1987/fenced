@@ -1,0 +1,149 @@
+/* Shared styles for the standalone legal pages (privacy, terms). Dark, on-brand. */
+:root {
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, sans-serif;
+  --bg: #0d0e10;
+  --surface: #16181c;
+  --surface-2: #1c1f24;
+  --border: #24272e;
+  --border-strong: #30343c;
+  --ink: #e8e9ea;
+  --ink-muted: #a0a4ab;
+  --ink-faint: #6c7079;
+  --accent: #d68a9c;
+  --accent-dim: rgba(214, 138, 156, 0.15);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+.topbar {
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(140%) blur(8px);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+.brand .ticks { color: var(--accent); }
+.back {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.back:hover { color: var(--ink); }
+
+header.head { padding: 64px 0 8px; }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--accent);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+h1 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-size: 1.875rem;
+  margin: 0 0 8px;
+  text-transform: lowercase;
+}
+.updated { color: var(--ink-faint); font-family: var(--font-mono); font-size: 0.8125rem; }
+
+main { padding: 24px 0 96px; }
+.tldr {
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  background: var(--accent-dim);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 24px 0 40px;
+}
+.tldr strong { color: var(--ink); }
+h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin: 40px 0 8px;
+  text-transform: lowercase;
+}
+h2 .num { color: var(--accent); margin-right: 10px; }
+p, li { color: var(--ink-muted); }
+strong { color: var(--ink); font-weight: 600; }
+ul { padding-left: 1.3em; }
+li { margin-bottom: 6px; }
+li::marker { color: var(--accent); }
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--surface-2);
+  color: var(--accent);
+  padding: 0.12em 0.4em;
+  border-radius: 5px;
+}
+
+.optout {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+.optout__btn {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  background: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.optout__btn[data-state="out"] {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border-strong);
+}
+.optout__status { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink-faint); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink-muted); text-decoration: none; }
+footer a:hover { color: var(--ink); }
+footer .pp { color: var(--accent); }

@@ -52,8 +52,21 @@ markdown ──▶ markdown-it ──▶ fenced (per-block decoration via Shiki)
 fenced is built the same way as its siblings: free, open source, free forever, with an optional tip jar.
 
 - Everything parses and highlights client-side. No server, no upload, no exceptions.
-- No accounts, no cookies, no analytics by default.
+- No accounts and no cookies. Your draft and settings are saved only in your browser's `localStorage`.
+- Analytics is cookieless (PostHog, in-memory persistence, no autocapture, no identifiers, never your content). It honors Do Not Track and Global Privacy Control, and there is an on-device opt-out on the privacy page. When no key is configured, no analytics code is loaded at all.
 - The exported HTML is fully self-contained. The only outbound request it makes is for the webfonts, and you are free to inline those too.
+
+See [privacy](https://fenced.dev/privacy.html) and [terms](https://fenced.dev/terms.html) for the full text.
+
+### analytics setup
+
+Analytics is opt-in at build time. Without a key it is a no-op.
+
+```bash
+cp .env.example .env.local   # then set VITE_POSTHOG_KEY for local dev
+```
+
+For production, add a `VITE_POSTHOG_KEY` repository secret (Settings → Secrets and variables → Actions). The deploy workflow passes it into the build. The host defaults to `us.i.posthog.com`; override with `VITE_POSTHOG_HOST`.
 
 ## run it locally
 
