@@ -64,6 +64,7 @@ export async function initAnalytics(): Promise<void> {
     capture_pageview: true,
     capture_pageleave: false,
     disable_session_recording: true,
+    disable_surveys: true, // no survey popups on a privacy-first tool
     respect_dnt: true,
     // We render Markdown the visitor pastes; never let PostHog read it.
     mask_all_text: true,
