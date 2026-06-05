@@ -7,7 +7,7 @@
 A free, 100% client-side tool that turns Markdown into gorgeous, self-contained HTML.
 Every code block becomes a decorated "fence", as a terminal window, a syntax-themed card, or clean plain text, and it all stays real, selectable HTML you can paste anywhere.
 
-[**fenced.dev**](https://fenced.dev) &nbsp;·&nbsp; [report an issue](https://github.com/lars-1987/fenced/issues) &nbsp;·&nbsp; [buy me a coffee](https://ko-fi.com)
+[**fenced.dev**](https://fenced.dev) &nbsp;·&nbsp; [report an issue](https://github.com/lars-1987/fenced/issues) &nbsp;·&nbsp; [buy me a coffee](https://ko-fi.com/larshdev)
 
 ![MIT licensed](https://img.shields.io/badge/license-MIT-d68a9c?style=flat-square)
 ![100% client-side](https://img.shields.io/badge/100%25-client--side-d68a9c?style=flat-square)
@@ -123,6 +123,6 @@ Deploys to GitHub Pages automatically on every push to `main` (see [.github/work
 
 <div align="center">
 
-☕ [buy me a coffee](https://ko-fi.com)
+☕ [buy me a coffee](https://ko-fi.com/larshdev)
 
 </div>
